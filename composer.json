@@ -1,0 +1,71 @@
+{
+    "name": "corgspace/hmac-http-client",
+    "description": "HMAC-signed HTTP client middleware for Laravel server-to-server APIs",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "hmac",
+        "signing",
+        "http-client",
+        "api",
+        "guzzle",
+        "middleware"
+    ],
+    "authors": [
+        {
+            "name": "CorgSpace",
+            "email": "info@corgspace.com",
+            "homepage": "https://corgspace.com"
+        }
+    ],
+    "homepage": "https://github.com/CorgSpace/hmac-http-client",
+    "support": {
+        "issues": "https://github.com/CorgSpace/hmac-http-client/issues",
+        "source": "https://github.com/CorgSpace/hmac-http-client"
+    },
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/psr7": "^2.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "psr/clock": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^10.5 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CorgSpace\\HmacHttpClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CorgSpace\\HmacHttpClient\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html build/coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
+        "format-test": "vendor/bin/pint --test"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CorgSpace\\HmacHttpClient\\HmacHttpClientServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
